@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="edge_detect.cpp" path="C:\Users\user\Desktop\edge_detect\hls_udemy_sobel\edge_detect.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="rover.bmp" path="C:\Users\user\Desktop\edge_detect\hls_udemy_sobel\rover.bmp"/>
+    <originFiles name="edge_detect_test.cpp" path="C:\Users\user\Desktop\edge_detect\hls_udemy_sobel\edge_detect_test.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

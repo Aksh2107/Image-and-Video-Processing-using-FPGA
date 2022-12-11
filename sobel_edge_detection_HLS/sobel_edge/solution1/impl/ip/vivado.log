@@ -1,0 +1,17 @@
+#-----------------------------------------------------------
+# Vivado v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Fri Jul 27 23:28:28 2018
+# Process ID: 7484
+# Current directory: C:/Users/user/Desktop/edge_detect/hls_udemy_sobel/sobel_edge/solution1/impl/ip
+# Command line: vivado.exe -notrace -mode batch -source run_ippack.tcl
+# Log file: C:/Users/user/Desktop/edge_detect/hls_udemy_sobel/sobel_edge/solution1/impl/ip/vivado.log
+# Journal file: C:/Users/user/Desktop/edge_detect/hls_udemy_sobel/sobel_edge/solution1/impl/ip\vivado.jou
+#-----------------------------------------------------------
+source run_ippack.tcl -notrace
+ipx::create_core: Time (s): cpu = 00:00:05 ; elapsed = 00:00:10 . Memory (MB): peak = 316.664 ; gain = 69.082
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'E:/Xilinx/Vivado/2018.1/data/ip'.
+INFO: [Common 17-206] Exiting Vivado at Fri Jul 27 23:29:10 2018...
