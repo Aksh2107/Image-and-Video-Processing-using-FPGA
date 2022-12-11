@@ -1,0 +1,333 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version     : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
+| Date             : Wed Nov  7 10:37:32 2018
+| Host             : localhost.localdomain running 64-bit CentOS Linux release 7.5.1804 (Core)
+| Command          : report_power -file design_1_wrapper_power_routed.rpt -pb design_1_wrapper_power_summary_routed.pb -rpx design_1_wrapper_power_routed.rpx
+| Design           : design_1_wrapper
+| Device           : xc7z020clg484-1
+| Design State     : routed
+| Grade            : commercial
+| Process          : typical
+| Characterization : Production
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Power Report
+
+Table of Contents
+-----------------
+1. Summary
+1.1 On-Chip Components
+1.2 Power Supply Summary
+1.3 Confidence Level
+2. Settings
+2.1 Environment
+2.2 Clock Constraints
+3. Detailed Reports
+3.1 By Hierarchy
+
+1. Summary
+----------
+
++--------------------------+--------------+
+| Total On-Chip Power (W)  | 1.841        |
+| Design Power Budget (W)  | Unspecified* |
+| Power Budget Margin (W)  | NA           |
+| Dynamic (W)              | 1.692        |
+| Device Static (W)        | 0.149        |
+| Effective TJA (C/W)      | 11.5         |
+| Max Ambient (C)          | 63.8         |
+| Junction Temperature (C) | 46.2         |
+| Confidence Level         | Medium       |
+| Setting File             | ---          |
+| Simulation Activity File | ---          |
+| Design Nets Matched      | NA           |
++--------------------------+--------------+
+* Specify Design Power Budget using, set_operating_conditions -design_power_budget <value in Watts>
+
+
+1.1 On-Chip Components
+----------------------
+
++-------------------------+-----------+----------+-----------+-----------------+
+| On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
++-------------------------+-----------+----------+-----------+-----------------+
+| Clocks                  |     0.016 |        6 |       --- |             --- |
+| Slice Logic             |     0.007 |     6617 |       --- |             --- |
+|   LUT as Logic          |     0.006 |     2479 |     53200 |            4.66 |
+|   CARRY4                |    <0.001 |      243 |     13300 |            1.83 |
+|   Register              |    <0.001 |     2895 |    106400 |            2.72 |
+|   F7/F8 Muxes           |    <0.001 |       11 |     53200 |            0.02 |
+|   LUT as Shift Register |    <0.001 |       76 |     17400 |            0.44 |
+|   Others                |     0.000 |      323 |       --- |             --- |
+| Signals                 |     0.009 |     4977 |       --- |             --- |
+| Block RAM               |     0.002 |      3.5 |       140 |            2.50 |
+| MMCM                    |     0.117 |        1 |         4 |           25.00 |
+| DSPs                    |     0.011 |       12 |       220 |            5.45 |
+| I/O                     |    <0.001 |       14 |       200 |            7.00 |
+| PS7                     |     1.530 |        1 |       --- |             --- |
+| Static Power            |     0.149 |          |           |                 |
+| Total                   |     1.841 |          |           |                 |
++-------------------------+-----------+----------+-----------+-----------------+
+
+
+1.2 Power Supply Summary
+------------------------
+
++-----------+-------------+-----------+-------------+------------+
+| Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
++-----------+-------------+-----------+-------------+------------+
+| Vccint    |       1.000 |     0.061 |       0.045 |      0.016 |
+| Vccaux    |       1.800 |     0.080 |       0.065 |      0.016 |
+| Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |
+| Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
+| Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
+| Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
+| Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
+| Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vccbram   |       1.000 |     0.001 |       0.000 |      0.001 |
+| MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
+| MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
+| MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vccpint   |       1.000 |     0.751 |       0.719 |      0.032 |
+| Vccpaux   |       1.800 |     0.061 |       0.051 |      0.010 |
+| Vccpll    |       1.800 |     0.017 |       0.014 |      0.003 |
+| Vcco_ddr  |       1.500 |     0.459 |       0.457 |      0.002 |
+| Vcco_mio0 |       3.300 |     0.003 |       0.002 |      0.001 |
+| Vcco_mio1 |       1.800 |     0.003 |       0.002 |      0.001 |
+| Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |
++-----------+-------------+-----------+-------------+------------+
+
+
+1.3 Confidence Level
+--------------------
+
++-----------------------------+------------+------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| User Input Data             | Confidence | Details                                        | Action                                                                                                     |
++-----------------------------+------------+------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| Design implementation state | High       | Design is routed                               |                                                                                                            |
+| Clock nodes activity        | High       | User specified more than 95% of clocks         |                                                                                                            |
+| I/O nodes activity          | High       | User specified more than 95% of inputs         |                                                                                                            |
+| Internal nodes activity     | Medium     | User specified less than 25% of internal nodes | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views |
+| Device models               | High       | Device models are Production                   |                                                                                                            |
+|                             |            |                                                |                                                                                                            |
+| Overall confidence level    | Medium     |                                                |                                                                                                            |
++-----------------------------+------------+------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+
+
+2. Settings
+-----------
+
+2.1 Environment
+---------------
+
++-----------------------+------------------------+
+| Ambient Temp (C)      | 25.0                   |
+| ThetaJA (C/W)         | 11.5                   |
+| Airflow (LFM)         | 250                    |
+| Heat Sink             | none                   |
+| ThetaSA (C/W)         | 0.0                    |
+| Board Selection       | medium (10"x10")       |
+| # of Board Layers     | 8to11 (8 to 11 Layers) |
+| Board Temperature (C) | 25.0                   |
++-----------------------+------------------------+
+
+
+2.2 Clock Constraints
+---------------------
+
++-------------------------------+-------------------------------------------------------------+-----------------+
+| Clock                         | Domain                                                      | Constraint (ns) |
++-------------------------------+-------------------------------------------------------------+-----------------+
+| clk_fpga_0                    | design_1_i/processing_system7_0/inst/FCLK_CLK0              |            10.0 |
+| clk_fpga_0                    | design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0] |            10.0 |
+| clk_out1_design_1_clk_wiz_0_0 | design_1_i/clk_wiz_0/inst/clk_out1_design_1_clk_wiz_0_0     |             6.7 |
+| clkfbout_design_1_clk_wiz_0_0 | design_1_i/clk_wiz_0/inst/clkfbout_design_1_clk_wiz_0_0     |            40.0 |
++-------------------------------+-------------------------------------------------------------+-----------------+
+
+
+3. Detailed Reports
+-------------------
+
+3.1 By Hierarchy
+----------------
+
++-----------------------------------------------------------------+-----------+
+| Name                                                            | Power (W) |
++-----------------------------------------------------------------+-----------+
+| design_1_wrapper                                                |     1.692 |
+|   design_1_i                                                    |     1.692 |
+|     clk_wiz_0                                                   |     0.117 |
+|       inst                                                      |     0.117 |
+|     proc_sys_reset_0                                            |    <0.001 |
+|       U0                                                        |    <0.001 |
+|         EXT_LPF                                                 |    <0.001 |
+|           ACTIVE_LOW_AUX.ACT_LO_AUX                             |    <0.001 |
+|           ACTIVE_LOW_EXT.ACT_LO_EXT                             |    <0.001 |
+|         SEQ                                                     |    <0.001 |
+|           SEQ_COUNTER                                           |    <0.001 |
+|     processing_system7_0                                        |     1.531 |
+|       inst                                                      |     1.531 |
+|     ps7_0_axi_periph                                            |     0.008 |
+|       s00_couplers                                              |     0.008 |
+|         auto_pc                                                 |     0.008 |
+|           inst                                                  |     0.008 |
+|             gen_axilite.gen_b2s_conv.axilite_b2s                |     0.008 |
+|               RD.ar_channel_0                                   |     0.003 |
+|                 ar_cmd_fsm_0                                    |    <0.001 |
+|                 cmd_translator_0                                |     0.002 |
+|                   incr_cmd_0                                    |    <0.001 |
+|                   wrap_cmd_0                                    |     0.001 |
+|               RD.r_channel_0                                    |     0.001 |
+|                 rd_data_fifo_0                                  |    <0.001 |
+|                 transaction_fifo_0                              |    <0.001 |
+|               SI_REG                                            |     0.002 |
+|                 ar.ar_pipe                                      |    <0.001 |
+|                 aw.aw_pipe                                      |    <0.001 |
+|                 b.b_pipe                                        |    <0.001 |
+|                 r.r_pipe                                        |    <0.001 |
+|               WR.aw_channel_0                                   |     0.002 |
+|                 aw_cmd_fsm_0                                    |    <0.001 |
+|                 cmd_translator_0                                |     0.001 |
+|                   incr_cmd_0                                    |    <0.001 |
+|                   wrap_cmd_0                                    |    <0.001 |
+|               WR.b_channel_0                                    |    <0.001 |
+|                 bid_fifo_0                                      |    <0.001 |
+|                 bresp_fifo_0                                    |    <0.001 |
+|     v_axi4s_vid_out_0                                           |     0.004 |
+|       inst                                                      |     0.004 |
+|         COUPLER_INST                                            |     0.003 |
+|           generate_sync_fifo.FIFO_INST                          |     0.003 |
+|             XPM_FIFO_SYNC_INST                                  |     0.003 |
+|               xpm_fifo_base_inst                                |     0.003 |
+|                 gen_fwft.rdpp1_inst                             |    <0.001 |
+|                 gen_sdpram.xpm_memory_base_inst                 |     0.002 |
+|                 rdp_inst                                        |    <0.001 |
+|                 rdpp1_inst                                      |    <0.001 |
+|                 rst_d1_inst                                     |    <0.001 |
+|                 wrp_inst                                        |    <0.001 |
+|                 wrpp1_inst                                      |    <0.001 |
+|                 xpm_fifo_rst_inst                               |    <0.001 |
+|         FORMATTER_INST                                          |    <0.001 |
+|         SYNC_INST                                               |    <0.001 |
+|     v_tc_0                                                      |    <0.001 |
+|       U0                                                        |    <0.001 |
+|         U_TC_TOP                                                |    <0.001 |
+|           GEN_GENERATOR.U_TC_GEN                                |    <0.001 |
+|         U_VIDEO_CTRL                                            |     0.000 |
+|     v_tpg_0                                                     |     0.030 |
+|       inst                                                      |     0.030 |
+|         MultiPixStream2AXIvi_U0                                 |     0.002 |
+|           grp_reg_unsigned_short_s_fu_261                       |    <0.001 |
+|           grp_reg_unsigned_short_s_fu_267                       |    <0.001 |
+|         bckgndYUV_V_val_0_V_U                                   |    <0.001 |
+|           U_design_1_v_tpg_0_0_fifo_w8_d2_A_ram                 |    <0.001 |
+|         bckgndYUV_V_val_1_V_U                                   |    <0.001 |
+|           U_design_1_v_tpg_0_0_fifo_w8_d2_A_ram                 |    <0.001 |
+|         bckgndYUV_V_val_2_V_U                                   |    <0.001 |
+|           U_design_1_v_tpg_0_0_fifo_w8_d2_A_ram                 |    <0.001 |
+|         ovrlayYUV_V_val_0_V_U                                   |    <0.001 |
+|           U_design_1_v_tpg_0_0_fifo_w8_d2_A_ram                 |    <0.001 |
+|         ovrlayYUV_V_val_1_V_U                                   |    <0.001 |
+|           U_design_1_v_tpg_0_0_fifo_w8_d2_A_ram                 |    <0.001 |
+|         ovrlayYUV_V_val_2_V_U                                   |    <0.001 |
+|           U_design_1_v_tpg_0_0_fifo_w8_d2_A_ram                 |    <0.001 |
+|         tpgBackground_U0                                        |     0.018 |
+|           call_ret13_tpgPatternVerticalHo_fu_637                |    <0.001 |
+|           call_ret15_tpgPRBS_fu_694                             |    <0.001 |
+|           call_ret16_tpgPatternDPColorRam_fu_614                |    <0.001 |
+|           call_ret2_tpgPatternHorizontal_fu_707                 |    <0.001 |
+|           call_ret3_tpgPatternVerticalRa_fu_625                 |    <0.001 |
+|           grp_tpgPatternCheckerBoa_fu_503                       |    <0.001 |
+|             tpgBarSelRgb_b359_U                                 |    <0.001 |
+|               design_1_v_tpg_0_0_tpgPatternDPColoreOg_rom_U     |    <0.001 |
+|             tpgCheckerBoardArray_U                              |    <0.001 |
+|               design_1_v_tpg_0_0_tpgPatternCheckerocq_rom_U     |    <0.001 |
+|           grp_tpgPatternColorBars_fu_590                        |    <0.001 |
+|             tpgBarSelRgb_b_U                                    |    <0.001 |
+|               design_1_v_tpg_0_0_tpgPatternDPColoreOg_rom_U     |    <0.001 |
+|             tpgBarSelRgb_r_U                                    |    <0.001 |
+|               design_1_v_tpg_0_0_tpgPatternDPColorcud_rom_U     |    <0.001 |
+|             tpgBarSelYuv_u_U                                    |    <0.001 |
+|               design_1_v_tpg_0_0_tpgPatternCheckertde_rom_U     |    <0.001 |
+|             tpgBarSelYuv_v_U                                    |    <0.001 |
+|               design_1_v_tpg_0_0_tpgPatternCheckersc4_rom_U     |    <0.001 |
+|             tpgBarSelYuv_y_U                                    |    <0.001 |
+|               design_1_v_tpg_0_0_tpgPatternCheckerqcK_rom_U     |    <0.001 |
+|           grp_tpgPatternCrossHatch_fu_569                       |    <0.001 |
+|             grp_reg_ap_uint_10_s_fu_192                         |    <0.001 |
+|             whiYuv_1_U                                          |    <0.001 |
+|               design_1_v_tpg_0_0_tpgPatternCrossHaCeG_rom_U     |    <0.001 |
+|           grp_tpgPatternDPColorSqu_fu_438                       |    <0.001 |
+|             DPtpgBarArray_U                                     |    <0.001 |
+|               design_1_v_tpg_0_0_tpgPatternDPColorbkb_rom_U     |    <0.001 |
+|             DPtpgBarSelRgb_CEA_b_U                              |    <0.001 |
+|               design_1_v_tpg_0_0_tpgPatternDPColorhbi_rom_U     |    <0.001 |
+|             DPtpgBarSelRgb_CEA_g_U                              |    <0.001 |
+|               design_1_v_tpg_0_0_tpgPatternDPColorg8j_rom_U     |    <0.001 |
+|             DPtpgBarSelRgb_CEA_r_U                              |    <0.001 |
+|               design_1_v_tpg_0_0_tpgPatternDPColorfYi_rom_U     |    <0.001 |
+|             DPtpgBarSelRgb_VESA_1_U                             |    <0.001 |
+|               design_1_v_tpg_0_0_tpgPatternDPColoreOg_rom_U     |    <0.001 |
+|             DPtpgBarSelRgb_VESA_s_U                             |    <0.001 |
+|               design_1_v_tpg_0_0_tpgPatternDPColorcud_rom_U     |    <0.001 |
+|             DPtpgBarSelYuv_601_u_U                              |    <0.001 |
+|               design_1_v_tpg_0_0_tpgPatternDPColorkbM_rom_U     |    <0.001 |
+|             DPtpgBarSelYuv_601_v_U                              |    <0.001 |
+|               design_1_v_tpg_0_0_tpgPatternDPColorlbW_rom_U     |    <0.001 |
+|             DPtpgBarSelYuv_601_y_U                              |    <0.001 |
+|               design_1_v_tpg_0_0_tpgPatternDPColoribs_rom_U     |    <0.001 |
+|             DPtpgBarSelYuv_709_u_U                              |    <0.001 |
+|               design_1_v_tpg_0_0_tpgPatternDPColormb6_rom_U     |    <0.001 |
+|             DPtpgBarSelYuv_709_v_U                              |    <0.001 |
+|               design_1_v_tpg_0_0_tpgPatternDPColorncg_rom_U     |    <0.001 |
+|             DPtpgBarSelYuv_709_y_U                              |    <0.001 |
+|               design_1_v_tpg_0_0_tpgPatternDPColorjbC_rom_U     |    <0.001 |
+|           grp_tpgPatternRainbow_fu_429                          |     0.008 |
+|             tpgSinTableArray_9bi_U                              |    <0.001 |
+|               design_1_v_tpg_0_0_tpgPatternRainbowvdy_rom_U     |    <0.001 |
+|             v_tpg_mac_muladd_Bew_U43                            |     0.001 |
+|               design_1_v_tpg_0_0_v_tpg_mac_muladd_Bew_DSP48_5_U |     0.001 |
+|           grp_tpgPatternSolidBlack_fu_685                       |    <0.001 |
+|             blkYuv_U                                            |    <0.001 |
+|               design_1_v_tpg_0_0_tpgPatternCrossHaDeQ_rom_U     |    <0.001 |
+|           grp_tpgPatternSolidBlue_fu_649                        |    <0.001 |
+|             bluYuv_U                                            |    <0.001 |
+|               design_1_v_tpg_0_0_tpgPatternSolidBlYie_rom_U     |    <0.001 |
+|           grp_tpgPatternSolidGreen_fu_658                       |    <0.001 |
+|             grnYuv_U                                            |    <0.001 |
+|               design_1_v_tpg_0_0_tpgPatternSolidGrZio_rom_U     |    <0.001 |
+|           grp_tpgPatternSolidRed_fu_667                         |    <0.001 |
+|             redYuv_U                                            |    <0.001 |
+|               design_1_v_tpg_0_0_tpgPatternSolidRe0iy_rom_U     |    <0.001 |
+|           grp_tpgPatternSolidWhite_fu_676                       |    <0.001 |
+|             whiYuv_U                                            |    <0.001 |
+|               design_1_v_tpg_0_0_tpgPatternCrossHaCeG_rom_U     |    <0.001 |
+|           grp_tpgPatternTartanColo_fu_536                       |    <0.001 |
+|             tpgBarSelRgb_b358_U                                 |    <0.001 |
+|               design_1_v_tpg_0_0_tpgPatternDPColoreOg_rom_U     |    <0.001 |
+|             tpgBarSelRgb_r354_U                                 |    <0.001 |
+|               design_1_v_tpg_0_0_tpgPatternDPColorcud_rom_U     |    <0.001 |
+|             tpgBarSelYuv_u350_U                                 |    <0.001 |
+|               design_1_v_tpg_0_0_tpgPatternCheckertde_rom_U     |    <0.001 |
+|             tpgBarSelYuv_v348_U                                 |    <0.001 |
+|               design_1_v_tpg_0_0_tpgPatternCheckersc4_rom_U     |    <0.001 |
+|             tpgBarSelYuv_y352_U                                 |    <0.001 |
+|               design_1_v_tpg_0_0_tpgPatternCheckerqcK_rom_U     |    <0.001 |
+|             tpgTartanBarArray_U                                 |    <0.001 |
+|               design_1_v_tpg_0_0_tpgPatternTartanCEe0_rom_U     |    <0.001 |
+|           grp_tpgPatternZonePlate_fu_483                        |     0.005 |
+|             v_tpg_mac_muladd_OgC_U70                            |     0.002 |
+|               design_1_v_tpg_0_0_v_tpg_mac_muladd_OgC_DSP48_8_U |     0.002 |
+|         tpgForeground_U0                                        |     0.005 |
+|           grp_tpgPatternBox_fu_352                              |     0.002 |
+|           grp_tpgPatternCrossHair_fu_379                        |    <0.001 |
+|         v_tpg_CTRL_s_axi_U                                      |     0.004 |
+|     vga_b_RnM                                                   |     0.000 |
+|     vga_g_RnM                                                   |     0.000 |
+|     vga_r_RnM                                                   |     0.000 |
+|     xlconstant_0                                                |     0.000 |
++-----------------------------------------------------------------+-----------+
+
+
